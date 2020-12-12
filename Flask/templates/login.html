@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Log in</title>
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
+
 <body>
-    <button class="g-recaptcha"
-        data-sitekey="6LfdYd4ZAAAAAPYturAXI9ltrEcFOhtrO45_pNB4"
-        data-callback='onSubmit'
-        data-action='submit'>Submit
-    </button>
+
+    <section class="login__container">
+        <form name="login__form">
+            <h1 class="login__container--title">Sign in</h1>
+            <div class="login__form--email">
+                <input class="login__input--email" type="email" name="email" placeholder="Email address" spellcheck="false">
+            </div>
+            <div class="login__form--password">
+                <input class="login__input--password" type="password" name="password" placeholder="Password" spellcheck="false">
+            </div>
+            <div class="login__form--button">
+                <a href="#">
+                    <button
+                        class="g-recaptcha"
+                        data-sitekey="6LfdYd4ZAAAAAPYturAXI9ltrEcFOhtrO45_pNB4"
+                        data-callback='onSubmitLogin'
+                        data-action='submit'
+                    >Sign in<span></span>
+                    </button>
+                </a>
+            </div>
+        </form>
+        <div class="login-with__container">
+            <h3 class="login-with__container--title">
+                Have a Google account?
+            </h3>
+            <div class="login-with__button">
+                <a href="#">
+                    <button
+                        class="g-recaptcha"
+                        data-sitekey="6LfdYd4ZAAAAAPYturAXI9ltrEcFOhtrO45_pNB4"
+                        data-callback='onSubmitOAuth'
+                        data-action='submit'
+                    >Sign in with Google<span></span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
     <script>
-           function onSubmit(token) {
+           function onSubmitLogin(token) {
+             document.getElementById("demo-form").submit();
+           }
+           function onSubmitOAuth(token) {
              document.getElementById("demo-form").submit();
            }
     </script>
 </body>
+
 </html>

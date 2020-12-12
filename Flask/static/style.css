@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    align-items: center;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    color: #23120b;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.login__container {
+    background-color: #389393;
+    border-radius: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-evenly;
+    text-align: center;
+    width: 500px;
+}
+
+.login__container--title {
+    color: #23120b;
+    font-size: 3.4rem;
+    font-weight: bold;
+    line-height: 4rem;
+    margin-bottom: 3rem;
+}
+
+.login__input--email {
+    color: #23120b;
+    height: 50px;
+    width: 90%;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    border-radius: 8px;
+    border: 1px solid #E8E7E9;
+    background-color: #FFFFFF;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.login__input--password {
+    color: #23120b;
+    height: 50px;
+    width: 90%;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    border-radius: 8px;
+    border: 1px solid #E8E7E9;
+    background-color: #FFFFFF;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.login__container button {
+    background-color: #393e46;
+    border: 0;
+    border-radius: 24px;
+    color: #f1f1f1;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    width: 90%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    text-decoration: none;
+    transition: .2s;
+    margin-left: 5%;
+}
+
+.login__container a {
+    text-decoration: none;
+}
+
+.login__form--button span {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+    background-image: url("./assets/icons/arrow-right.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-with__button button {
+    background-color: #f1f1f1;
+    color: #23120b;
+}
+
+.login-with__button span {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+    background-image: url("./assets/icons/google-icon.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login__input--email::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    opacity: 1;
+}
+
+.login__input--password::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    opacity: 1;
+}
+
+.login__input--email::-ms-input-placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login__input--password::-ms-input-placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login__form--button button:hover {
+    box-shadow: 4px 4px 12px 2px rgba(57, 62, 70, 1);
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.login-with__button button:hover {
+    box-shadow: 4px 4px 12px 2px rgba(57, 62, 70, 1);
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.login-with__container--title {
+    color: #23120b;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    margin-bottom: 1rem;
+}
