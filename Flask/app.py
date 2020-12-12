@@ -29,7 +29,18 @@ def credentials_to_dict(credentials):
 
 @app.route('/')
 def index():
-    return redirect('/login')
+    if 'credentials' not in flask.session:
+        return flask.redirect('/login')
+    else:
+        return redirect('/home')
+
+
+@app.route('/home')
+def home():
+    if 'credentials' not in flask.session:
+        return flask.redirect('/login')
+    else:
+        return render_template('home.html')
 
 
 @app.route('/login')
@@ -46,7 +57,7 @@ def do_login():
 @app.route('/do_login_oauth')
 def do_login_oauth():
     if 'credentials' not in flask.session:
-        return flask.redirect('authorize')
+        return redirect('authorize')
 
     # Load credentials from the session.
     credentials = google.oauth2.credentials.Credentials(
@@ -87,7 +98,7 @@ def authorize():
     # Store the state so the callback can verify the auth server response.
     flask.session['state'] = state
 
-    return flask.redirect(authorization_url)
+    return redirect(authorization_url)
 
 
 @app.route('/oauth2callback')
@@ -110,7 +121,7 @@ def oauth2callback():
     credentials = flow.credentials
     flask.session['credentials'] = credentials_to_dict(credentials)
 
-    return flask.redirect(flask.url_for('do_login'))
+    return redirect(flask.url_for('home'))
 
 
 if __name__ == '__main__':
