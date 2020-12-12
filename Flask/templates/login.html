@@ -21,15 +21,13 @@
                 <input class="login__input--password" type="password" name="password" placeholder="Password" spellcheck="false">
             </div>
             <div class="login__form--button">
-                <a href="#">
-                    <button
-                        class="g-recaptcha"
-                        data-sitekey="6LfdYd4ZAAAAAPYturAXI9ltrEcFOhtrO45_pNB4"
-                        data-callback='onSubmitLogin'
-                        data-action='submit'
-                    >Sign in<span></span>
-                    </button>
-                </a>
+                <button
+                    class="g-recaptcha"
+                    data-sitekey="6LfdYd4ZAAAAAPYturAXI9ltrEcFOhtrO45_pNB4"
+                    data-callback='onSubmitLogin'
+                    data-action='submit'
+                >Sign in<span></span>
+                </button>
             </div>
         </form>
         <div class="login-with__container">
@@ -37,24 +35,22 @@
                 Have a Google account?
             </h3>
             <div class="login-with__button">
-                <a href="#">
-                    <button
-                        class="g-recaptcha"
-                        data-sitekey="6LfdYd4ZAAAAAPYturAXI9ltrEcFOhtrO45_pNB4"
-                        data-callback='onSubmitOAuth'
-                        data-action='submit'
-                    >Sign in with Google<span></span>
-                    </button>
-                </a>
+                <button
+                    class="g-recaptcha"
+                    data-sitekey="6LfdYd4ZAAAAAPYturAXI9ltrEcFOhtrO45_pNB4"
+                    data-callback='onSubmitOAuth'
+                    data-action='submit'
+                >Sign in with Google<span></span>
+                </button>
             </div>
         </div>
     </section>
     <script>
            function onSubmitLogin(token) {
-             document.getElementById("demo-form").submit();
+               window.location.replace("/do_login");
            }
            function onSubmitOAuth(token) {
-             document.getElementById("demo-form").submit();
+               window.location.replace("/do_login_oauth");
            }
     </script>
 </body>

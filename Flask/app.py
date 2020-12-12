@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 import os
 import flask
 import requests
@@ -27,6 +27,11 @@ def credentials_to_dict(credentials):
     }
 
 
+@app.route('/')
+def index():
+    return redirect('/login')
+
+
 @app.route('/login')
 def login():
     return render_template('login.html')
@@ -34,6 +39,12 @@ def login():
 
 @app.route('/do_login')
 def do_login():
+    # TODO
+    pass
+
+
+@app.route('/do_login_oauth')
+def do_login_oauth():
     if 'credentials' not in flask.session:
         return flask.redirect('authorize')
 
